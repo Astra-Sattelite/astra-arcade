@@ -9,14 +9,15 @@ export const router = createHashRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      { index: true, 
+      {
+        index: true,
         element: <Landing />,
-        handle: { showInMenu: true, label: "Home" } 
+        handle: { showInMenu: true, label: "Home" }
       },
       {
         path: 'stellardodge',
         element: <StellarDodge />,
-        handle: { showInMenu: true, label: "Stellar Dodge" } 
+        handle: { showInMenu: true, label: "Stellar Dodge" }
       }
     ],
   },
