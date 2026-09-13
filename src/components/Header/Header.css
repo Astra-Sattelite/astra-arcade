@@ -1,0 +1,149 @@
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--space-void);
+    padding: 16px;
+    border-bottom: 2px solid var(--nebula-purple);
+    box-shadow: 0 4px 20px rgba(123, 44, 191, 0.2);
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background-color: var(--nebula-purple);
+    width: 56px;
+    height: 56px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.logo svg {
+    width: 32px;
+    height: 32px;
+    color: var(--starlight);
+    z-index: 2;
+    transform: rotate(0deg) translate(0px, 0px) scale(1.1);
+    transition: color 0.3s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.micro-meteor {
+    position: absolute;
+    width: 2px;
+    height: 12px;
+    background: linear-gradient(to bottom, transparent, var(--photon-cyan));
+    transform: rotate(-45deg);
+    top: -20px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.micro-meteor:nth-child(1) {
+    left: 20%;
+}
+
+.micro-meteor:nth-child(2) {
+    left: 50%;
+}
+
+.micro-meteor:nth-child(3) {
+    left: 80%;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    background-color: var(--space-dark);
+    border: 1px solid var(--photon-cyan);
+    box-shadow: 0 0 15px var(--photon-cyan);
+}
+
+.logo:hover svg {
+    color: var(--photon-cyan);
+    animation: smoothParabolaDodge 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes smoothParabolaDodge {
+    0% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1.1);
+    }
+
+    25% {
+        transform: rotate(-6deg) translate(-5px, -2px) scale(1.05);
+    }
+
+    50% {
+        transform: rotate(0deg) translate(0px, 3px) scale(1);
+    }
+
+    75% {
+        transform: rotate(6deg) translate(5px, -2px) scale(1.05);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0px, 0px) scale(1.1);
+    }
+}
+
+.logo:hover .micro-meteor {
+    opacity: 1;
+    animation: hazardRain 0.6s linear infinite;
+}
+
+.logo:hover .micro-meteor:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo:hover .micro-meteor:nth-child(2) {
+    animation-duration: 0.4s;
+    animation-delay: 0.15s;
+    background: linear-gradient(to bottom, transparent, var(--starlight));
+}
+
+.logo:hover .micro-meteor:nth-child(3) {
+    animation-duration: 0.5s;
+    animation-delay: 0.3s;
+}
+
+@keyframes hazardRain {
+    0% {
+        top: -20px;
+        transform: translateX(-10px) rotate(-45deg);
+    }
+
+    100% {
+        top: 60px;
+        transform: translateX(40px) rotate(-45deg);
+    }
+}
+
+.nav-text-link {
+    color: var(--starlight);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding-bottom: 4px;
+    transition: color 0.2s ease, text-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-text-link:hover {
+    color: var(--laser-pink);
+    text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+}
+
+.nav-text-link.active {
+    color: var(--photon-cyan);
+    text-shadow: 0 0 8px rgba(0, 245, 212, 0.6);
+    border-color: var(--photon-cyan);
+}
