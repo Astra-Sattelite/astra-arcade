@@ -3,14 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Astra-Sattelite.github.io/astra-arcade",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/lodash": "^4.17.25",
+    "gh-pages": "^6.3.0",
     "lodash": "^4.18.1",
     "phaser": "^4.2.1",
     "react": "^19.2.8",

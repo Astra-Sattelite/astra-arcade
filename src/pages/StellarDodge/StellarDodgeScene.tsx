@@ -99,7 +99,7 @@ export class StellarDodgeScene extends Phaser.Scene {
     meteor.setAngularVelocity(Phaser.Math.Between(-100, 100));
   }
 
-  private hitMeteor(playerObject: any, meteorObject: any) {
+  private hitMeteor(playerObject: any) {
     this.physics.pause();
     this.spawnTimer.destroy();
 

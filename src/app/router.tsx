@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom'
 import Landing from '../pages/Landing/Landing';
 import RootLayout from '../layouts/RootLayout';
 import StellarDodge from '../pages/StellarDodge/StellarDodge';
 // import { NotFoundPage } from '../pages/NotFoundPage';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <RootLayout />,
